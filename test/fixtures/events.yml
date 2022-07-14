@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  datetime: 
+  datetime: 
+  string: 
+  string: 
+  string: 
+  user: one
+
+two:
+  datetime: 
+  datetime: 
+  string: 
+  string: 
+  string: 
+  user: two
