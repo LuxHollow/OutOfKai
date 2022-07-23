@@ -29,3 +29,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/vendor/*
+
+/credentials.yaml
+
+/client_secret.json
+
+/config/credentials.yml
