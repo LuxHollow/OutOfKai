@@ -17,13 +17,7 @@
       editable: true,
       navLinks: true, // can click day/week names to navigate views
       dayMaxEvents: true, // allow "more" link when too many events
-      events: [
-      {
-      id: 'a', 
-      title: 'my event', // label
-      start: '2022-07-14' //datetime-end
-      }
-      ],
+      events: <%= @events.html_safe %>,
       loading: function(bool) {
         document.getElementById('loading').style.display =
           bool ? 'block' : 'none';
@@ -78,11 +72,6 @@
 
   <div id='calendar'></div>
 
-  <%@events.each do |event|%>
-  <div> <%=event.label %> </div>
-  <% end %>
-  
-  <div> id = <%=@user.email%> <div>
 
 </body>
 </html>

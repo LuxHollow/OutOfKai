@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :events
+  resources :users
   devise_for :users
   get "about-us", to: "about#index", as: :about
 

@@ -4,6 +4,17 @@ class Event < ApplicationRecord
   belongs_to :user
 
 
+  def self.for_calendar(user_id)
+    events = Event.where(user_id: user_id).map do |event|
+      {
+        id: event.id,
+        title: event.label,
+        start: event.datestart,
+        end: event.dateend
+      }
+    end
+    events.to_json
+  end
   private
 
   def end_date_is_after_start_date

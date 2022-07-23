@@ -1,7 +1,9 @@
 class CalendarController < ApplicationController
-    def index
-        @events = Event.all
-        @user = User.first
+  before_action :authenticate_user!
 
-    end        
-end    
+  def index
+    @events = Event.for_calendar(current_user)
+    @user = current_user
+
+  end
+end
