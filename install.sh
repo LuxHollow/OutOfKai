@@ -16,8 +16,14 @@ if ! docker-compose build; then
 fi
 
 printf "${CYAN}Installing bundles${NC}\n"
-if ! docker-compose run web bundle install; then
+if ! docker-compose run ouk bundle install; then
  printf "${RED}Bundle installation failed${NC}\n"
+ exit 3
+fi
+
+printf "${CYAN}Installing bundles${NC}\n"
+if ! docker-compose run ouk rails db:setup; then
+ printf "${RED}Db setup failed${NC}\n"
  exit 4
 fi
 
